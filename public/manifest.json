@@ -1,6 +1,6 @@
 {
-  "name": "React Chrome Extension",
-  "description": "A starter for creating Chrome Extensions with React",
+  "name": "Fast Tabs",
+  "description": "Open groups of your favourite websites in a flash.",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
