@@ -6,7 +6,20 @@ import Settings from "./components/Settings";
 
 function App() {
   const [page, setPage] = useState('home')
-  const [state, setState] = useState()
+  const [state, setState] = useState({
+    urlOne: '',
+    urlTwo: '',
+    urlThree: '',
+    groupOneIsPinned: false,
+    urlFour: '',
+    urlFive: '',
+    urlSix: '',
+    groupTwoIsPinned: false,
+    urlSeven: '',
+    urlEight: '',
+    urlNine: '',
+    groupThreeIsPinned: false
+  })
 
   const changePage = (destination) => {
     setPage(destination)
