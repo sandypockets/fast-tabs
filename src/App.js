@@ -6,6 +6,7 @@ import Settings from "./components/Settings";
 
 function App() {
   const [page, setPage] = useState('home')
+  const [state, setState] = useState()
 
   const changePage = (destination) => {
     setPage(destination)
@@ -16,15 +17,22 @@ function App() {
       {page === 'home' &&
         <Home
           changePage={changePage}
+          state={state}
         />
       }
       {page === 'settings' &&
-        <Settings changePage={changePage} />
+        <Settings
+          changePage={changePage}
+          state={state}
+          setState={setState}
+        />
       }
       {page === '1' &&
         <ButtonSettings
           buttonId={'1'}
           changePage={changePage}
+          state={state}
+          setState={setState}
         />
       }
     </div>
