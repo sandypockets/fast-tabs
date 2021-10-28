@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import LinkGroup from "./LinkGroup";
+import PageButtons from "./PageButtons";
 
-export default function Settings({ setPage, state, setState }) {
+export default function Settings({ changePage, state, setState }) {
+  const [subPage, setSubPage] = useState('groups')
 
   useEffect(() => {
     chrome.storage.local.get(['urls'], function(result) {
@@ -50,7 +53,9 @@ export default function Settings({ setPage, state, setState }) {
         }
       }
     });
+    setSubPage('groups')
   }
+
 
   const formGroups = {
     groupOne: [
@@ -152,40 +157,26 @@ export default function Settings({ setPage, state, setState }) {
     <>
       <div className="container">
         <div>
-          <div className="urlForms card">
-            <h3 className="linkGroupTitle cardTitle">Link group 1</h3>
-            {formGroups.groupOne.map((item, index) => (
-              <div key={index} className="urlForm">
-                <label className={item.className}>{item.label}</label>
-                <input className={item.inputClassName} type={item.type} value={item.value} checked={item.checked} onChange={item.onChangeFunction} />
-              </div>
-            ))}
-          </div>
-
-          <div className="urlForms card">
-            <h3 className="linkGroupTitle cardTitle">Link group 2</h3>
-            {formGroups.groupTwo.map((item, index) => (
-              <div key={index} className="urlForm">
-                <label className={item.className}>{item.label}</label>
-                <input className={item.inputClassName} type={item.type} value={item.value} checked={item.checked} onChange={item.onChangeFunction} />
-              </div>
-            ))}
-          </div>
-
-          <div className="urlForms card">
-            <h3 className="linkGroupTitle cardTitle">Link group 3</h3>
-            {formGroups.groupThree.map((item, index) => (
-              <div key={index} className="urlForm">
-                <label className={item.className}>{item.label}</label>
-                <input className={item.inputClassName} type={item.type} value={item.value} checked={item.checked} onChange={item.onChangeFunction} />
-              </div>
-            ))}
-          </div>
-          <div className="saveUrlsContainer">
+          <PageButtons subPage={subPage} setSubPage={setSubPage} />
+          {subPage === 'groupOne' &&
+            <LinkGroup groupNum={'1'} group={formGroups.groupOne} />
+          }
+          {subPage === 'groupTwo' &&
+            <LinkGroup groupNum={'2'} group={formGroups.groupTwo} />
+          }
+          {subPage === 'groupThree' &&
+            <LinkGroup groupNum={'3'} group={formGroups.groupThree} />
+          }
+          <div className="saveUrlsContainer card">
             <button className="saveUrls" onClick={handleSubmit}>Save</button>
+            <button onClick={() => {
+              changePage('home')
+            }}>
+              Back
+            </button>
           </div>
         </div>
-        <a onClick={() => setPage('home')}>Back</a>
+
       </div>
     </>
   )

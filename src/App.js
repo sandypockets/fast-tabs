@@ -1,7 +1,6 @@
 import { useState } from "react";
 import './main.css';
 import Home from "./components/Home";
-import ButtonSettings from "./components/ButtonSettings";
 import Settings from "./components/Settings";
 
 function App() {
@@ -35,14 +34,6 @@ function App() {
       }
       {page === 'settings' &&
         <Settings
-          changePage={changePage}
-          state={state}
-          setState={setState}
-        />
-      }
-      {page === '1' &&
-        <ButtonSettings
-          buttonId={'1'}
           changePage={changePage}
           state={state}
           setState={setState}

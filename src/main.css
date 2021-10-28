@@ -9,8 +9,7 @@
     --transitionDurationFast: 50ms;
 }
 .app {
-    width: 330px;
-    height: 575px;
+    width: 400px;
     background-color: var(--primaryColor);
     font-size: calc(10px + 2vmin);
     color: var(--primaryAccent);
@@ -32,6 +31,9 @@ h1, h2, h3, h4, span, label {
 }
 h1 {
     margin: 0;
+}
+a.nav {
+    font-size: 16px;
 }
 h1.title {
     color: var(--secondaryAccent);
@@ -87,6 +89,12 @@ svg.svg {
     height: 1em;
     width: 1em;
     margin-left: -6px;
+}
+svg.settingsIcon {
+    height: 30px;
+    width: 30px;
+    padding: 6px 5px 0 10px;
+    fill: var(--secondaryAccent);
 }
 .card {
     background-color: var(--secondaryColor);
@@ -162,7 +170,7 @@ button.saveUrls {
     color: var(--secondaryColor);
 }
 button.saveUrls:hover {
-    background-color: var(--secondaryColor);
+    background-color: var(--primaryColor);
     color: var(--secondaryAccent);
 }
 h3.linkGroupTitle {
