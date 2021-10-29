@@ -1,9 +1,9 @@
 import FastTabButtons from "./FastTabButtons";
 
-export default function Home({ changePage }) {
+export default function Home({ state, changePage }) {
   return (
     <>
-      <FastTabButtons changePage={changePage} />
+      <FastTabButtons state={state} changePage={changePage} />
     </>
   )
 }
