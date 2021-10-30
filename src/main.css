@@ -96,6 +96,7 @@ svg.settingsIcon {
     width: 30px;
     padding: 6px 5px 0 10px;
     fill: var(--secondaryAccent);
+    cursor: pointer;
 }
 svg.settingsIcon:hover {
     fill: var(--primaryColor);
