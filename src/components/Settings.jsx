@@ -56,7 +56,6 @@ export default function Settings({ changePage, state, setState }) {
     setSubPage('groups')
   }
 
-
   const formGroups = {
     groupOne: [
       {
@@ -176,7 +175,6 @@ export default function Settings({ changePage, state, setState }) {
             </button>
           </div>
         </div>
-
       </div>
     </>
   )
