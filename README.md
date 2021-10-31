@@ -1,32 +1,30 @@
-# React.js Chrome Extension Template
-A quick way to get started building Chrome Extensions with React.
+# Fast Tabs
+A simple Chrome extension made with React. Open three websites at once. Choose whether the tabs should open as pinned tabs, and change the URLs anytime in the settings.
+
+![Extension popup home](https://github.com/sandypockets/fast-tabs/blob/main/docs/screenshot-home.png?raw=true)
+![Settings](https://github.com/sandypockets/fast-tabs/blob/main/docs/screenshot-settings.png?raw=true)
+![Link Group Settings](https://github.com/sandypockets/fast-tabs/blob/main/docs/screenshot-groupsettings.png?raw=true)
+
+## Chrome permissions
+* Storage: to save your chosen URLs to your device
+* Background: to run a background script (`public/background.js`) responsible for changing settings and opening tabs.
 
 ## Getting started
 This project was developed and tested with `Node 14.17.0` and `yarn 1.22.15`.
 
-1. Click **Use this template**.
-2. Clone the repository.
-3. Install dependencies by running:
+1. Clone the repository.
+2. Install dependencies by running:
 ```shell
 yarn install
 ```
-4. Build the extension by running:
+3. Build the extension by running:
 ```shell
 yarn build
 ```
-5. In your browser, go to `chrome://extensions/` and enable developer mode.
+4. In your browser, go to `chrome://extensions/` and enable developer mode.
 > Click the Chrome menu icon and select Extensions from the Tools menu. Ensure that the "Developer mode" checkbox in the top right-hand corner is checked.
-6. Click **Load unpacked**.
-7. Upload the `build/` directory within the project.
-
-### Making changes
-For the most part, the extension functions like a normal React app. Make changes in the `src/App.js` file. After making a change, you need to:
-
-1. Rebuild the app:
-```shell
-yarn build
-```
-2. Refresh the extension upload. In your browser, go to `chrome://extensions/`. Click the refresh icon on your extension's card.
+5. Click **Load unpacked**.
+6. Upload the `build/` directory within the project.
 
 ## Dependencies
 * @testing-library/jest-dom `^5.11.4`
